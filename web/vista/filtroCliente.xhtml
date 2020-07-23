@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+    <body>
+        <ui:composition template="./../template/PlantillaLogin.xhtml">
+            <ui:define name="top">
+                <h:form>
+                    <div class="ui-g ui-fluid">
+                        <div class="ui-g-12 ui-md-4">
+                            <div class="ui-inputgroup">
+                                <span class="ui-inputgroup-addon"><i class="pi pi-user"></i></span>
+                                <p:inputText value="#{bEmpresa.user.usuario}" placeholder="Username" style="width:40%" />      
+                            </div>
+                        </div>
+                    </div>
+                </h:form>
+            </ui:define>
+            <ui:define name="content">
+                <div class="filtc">
+                    <center>
+                        <h3>Filtro</h3>
+                    </center>
+                    <h:form>
+                        <div class="columna1fic">
+                            <span class="izquierda">
+                                <p:outputLabel  value="Opciones: " style="font-weight:bold;"/>
+                                <p:selectOneMenu id="opc" effect="fold" editable="true">
+                                    <f:selectItem itemLabel="Seleccione Uno" itemValue="" />
+                                    <f:selectItems />
+                                </p:selectOneMenu>
+                                <p:outputLabel  value="Opciones producto: " style="font-weight:bold;"/>
+                                <p:selectOneMenu id="tipo" value="#{bVenta.tipoproducto}" effect="fold" editable="true">
+                                    <f:selectItem itemLabel="Seleccione Uno" itemValue="" />
+                                    <f:selectItems value="#{bVenta.tipoproductos}" />
+                                </p:selectOneMenu>                      
+
+                                <h:column/>
+                                <p:commandButton value="Lista items" action="#{bVenta.buscarTipo()}" style="width:80%;"/>
+                                <p:commandButton value="Lista ventas" action="#{bVenta.filtraFecha()}" style="width:80%;"/>
+                                
+                                <h:column/>
+
+                            </span>
+                        </div>
+                        <div class="columnafil">
+                            <center>
+                                <h3>Tabla:</h3>
+                                <p:panelGrid columns="1" layout="grid"  style="width:70%" >
+                                    <p:dataTable var="productlist" value="#{bVenta.producventas}" >
+                                        <p:column headerText="Fecha compra">
+                                            <h:outputText value="#{productlist.fechacompra}" />
+                                        </p:column>
+
+                                        <p:column headerText="Id producto">
+                                            <h:outputText value="#{productlist.idproducto}" />
+                                        </p:column>
+
+                                        <p:column headerText="Nombre producto">
+                                            <h:outputText value="#{productlist.nombreproducto}" />
+                                        </p:column>
+                                        <p:column headerText="Tipo producto">
+                                            <h:outputText value="#{productlist.tipoproducto}" />
+                                        </p:column>
+                                        <p:column headerText="Cantidad">
+                                            <h:outputText value="#{productlist.cantidad}" />
+                                        </p:column>
+                                        <p:column headerText="Precio">
+                                            <h:outputText value="#{productlist.precio}" />
+                                        </p:column>
+                                    </p:dataTable>
+                                </p:panelGrid>
+                            </center>
+                        </div>
+                        <div class="columnafil2">
+                            <p:commandButton value="Regresar al menu" action="#{bEmpresa.regresarmenu()}" style="width:20%;"/>
+                            <p:commandButton value="Cerrar sesión" action="#{bEmpresa.cerrarsesionfiltrocli()}" style="width:20%;"/>
+                        </div>
+
+                    </h:form>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>

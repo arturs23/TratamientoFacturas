@@ -1,0 +1,199 @@
+#top {
+    background-image: url(../imagenes/logofactura.png);
+    background-repeat: no-repeat;
+    background-position:60%; 
+    background-size: 100px;
+    position: relative;
+    height:110px;
+    color: white;
+    padding: 5px;
+    margin: 0px 0px 10px 0px;
+    margin-bottom: 20px;
+    
+
+}
+.menuprin{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+     background-color: #FFFFFF80;
+
+}
+.columnafil2{
+      max-width:500px;
+}
+.filtc{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+   background-color: #FFFFFF80;
+}
+.login{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+   background-color: #FFFFFF80; 
+}
+.filtcfe{
+   width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+   background-color: #FFFFFF80;  
+}
+
+.columna1fic{
+     max-width:200px;
+}
+
+
+.columna1fife{
+     max-width:200px;
+}
+.derecha{
+    float: right; 
+}
+
+
+.columna4{
+     max-width: 500px;
+    background-image: url(../imagenes/menu.png);
+    background-repeat: no-repeat;
+    background-position:60%; 
+    background-size: 250px;
+    height:110px;
+}
+
+#titulo{
+    font-style:italic;
+    font-weight:bold;
+    font-size:2em;
+    font-family:'Helvetica','Verdana','Monaco',sans-serif;  
+}
+#bottom {
+    position: relative;
+    background-color: #c2dfef;
+    padding: 5px;
+    margin: 10px 0px 0px 0px;
+}
+#menubar{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+#listaempresa{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;  
+}
+
+
+footer{
+    width: 100%;
+    margin: auto;
+    box-sizing: border-box;
+    font-family: sans-serif;
+
+}
+.contanier-body{
+    width: 70%;
+    display: flex;
+    background:#5E79A1;
+    position: relative;
+    height:70%;
+    color: white;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto; 
+
+}
+.columna1{
+    max-width:400px;
+}
+.columna1 h1{
+    font-size: 20px;
+    color: white;
+}
+.columna1 p{
+    font-size: 14px;
+    color: #C7C7C7;
+    margin-top: 20px;
+    width: 100%;
+}
+.columna2{
+    max-width: 400px;
+    background-image: url(../imagenes/ucentral.png);
+    background-repeat: no-repeat;
+    background-position:50%; 
+    background-size: 150px;
+
+}
+
+.columna2 h1{
+    font-size: 20px;
+    color: white; 
+}
+.columna2 p{
+    font-size: 14px;
+    color: #C7C7C7;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.container-footer{
+    width: 70%;
+    display: flex;
+    background:#5E79A1;
+    position: relative;
+    height:70%;
+    color: white;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+
+
+}
+
+.row{
+    margin-top: 20px;
+    display: flex;    
+}
+.row img{
+    width: 35px;
+    height: 35px;
+
+
+
+}
+
+#right {
+    float: right; 
+    padding: 5px;
+    width: 150px;
+}
+
+.center_content {
+    position: relative;
+    padding: 5px;
+
+}
+
+.right_content {
+    background-color: #dddddd;
+    padding: 5px;
+    margin: 0px 170px 0px 170px;
+}
+
+#top a:link, #top a:visited {
+    color: black;
+    font-weight : bold;
+    text-decoration: none;
+}
+
+#top a:link:hover, #top a:visited:hover  {
+    color: black;
+    font-weight : bold;
+    text-decoration : underline;
+}
+
+

@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+    <h:body>
+        <ui:composition template="./../template/PlantillaLogin.xhtml">
+
+            <ui:define name="top">
+                <h:form>
+                    <div class="ui-g ui-fluid">
+                        <div class="ui-g-12 ui-md-4">
+                            <div class="ui-inputgroup">
+                                <span class="ui-inputgroup-addon"><i class="pi pi-user"></i></span>
+                                <p:inputText value="#{bEmpresa.user.usuario}" placeholder="Username" style="width:40%" />      
+                            </div>
+                        </div>
+                    </div>
+                </h:form>
+            </ui:define>
+            <ui:define name="content">
+
+                <div id="Formulario">
+                    <h:form>
+                        <p:growl id="growl" showDetail="true" sticky="true"/>
+                        <center>
+                            <p:panelGrid columns="1" layout="grid"  style="width:70%" >
+                                <h1> Formulario de registro</h1>
+
+                                <div style="padding:auto"> 
+
+                                    <p:outputLabel value="Nombre: " style="font-weight:bold;"/>
+                                    <p:inputText value="#{bEmpresa.usuario}" style="width:auto"/>
+                                </div>
+
+                                <div style="padding:auto;">
+                                    <h:column/>
+                                    <p:outputLabel value="Establecer contraseña: " style="font-weight:bold;"/>
+                                    <h:column/>
+                                    <p:inputText value="#{bEmpresa.contrasena}" style="width:auto"/>
+                                </div>
+                                <h:column/>
+                                <div style="padding:auto;">
+                                    <p:outputLabel value="Dirreción: " style="font-weight:bold;"/>
+                                    <p:inputText style="width:auto" value="#{bEmpresa.direccion}"/>
+                                </div>
+
+                                <div style="padding:auto;">
+                                    <h:column/>
+                                    <p:outputLabel value="Telefono: " style="font-weight:bold;"/>
+                                    <h:column/>
+                                    <p:inputText value="#{bEmpresa.telefono}" style="width:auto"/>
+                                </div>
+                                <h:column/>
+                                <div style="padding:auto;">
+                                    <p:outputLabel value="nit: " style="font-weight:bold;"/>
+                                    <p:inputText id="nit" style="width:auto" value="#{bEmpresa.nit}"/>
+                                </div> 
+
+                                <div style="padding:auto;">
+                                    <h:column/>
+                                    <p:outputLabel for="@next" value="Privilegio: " style="font-weight:bold;"/>
+                                    <h:column/>
+                                    <br/>
+                                    <p:selectOneMenu id="posiciones" value="#{bEmpresa.privilegio}" effect="fold" editable="true">
+                                        <f:selectItem itemLabel="Seleccione Uno" itemValue="" />
+                                        <f:selectItems value="#{bEmpresa.privilegios}" />
+                                    </p:selectOneMenu>
+
+                                </div>               
+                                <cente>
+                                    <p:panelGrid columns="1" layout="grid"  style="width:auto" >
+                                        <div style="padding:auto;">
+                                            <h:column/>
+                                            <p:commandButton value="Registrar" action="#{bEmpresa.insertarEmpresa()}" style="width:100%;" update="growl"/>
+                                            <p:growl id="messages" showDetail="true"/>
+
+                                            <p:menuButton value=" Paquete de Herramientas">
+                                                <p:menuitem value="Actualizar" action="#{bEmpresa.actuliza()}" update="messages" icon="pi pi-save"/>
+                                                <p:menuitem value="Eliminar" action="#{bEmpresa.borrarEmpresa()}" update="messages" icon="pi pi-refresh"/>
+                                                <p:menuitem value="Lista" action="#{bEmpresa.lista()}" ajax="false" icon="pi pi-times"/>
+                                                <p:separator />
+
+                                            </p:menuButton>
+                                            <p:commandButton value="Cerrar sesión" action="#{bEmpresa.cerrarSesion()}" style="width:100%;"/>
+                                            <p:spacer width="10"/>  
+                                        </div>
+                                    </p:panelGrid>
+                                </cente>
+                            </p:panelGrid>
+                        </center>
+                    </h:form>
+                </div>
+            </ui:define>
+
+        </ui:composition>
+    </h:body>
+
+</html>

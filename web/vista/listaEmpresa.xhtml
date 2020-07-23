@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Lista Empresa</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+         <ui:define name="top">
+                <h:form>
+                    <div class="ui-g ui-fluid">
+                        <div class="ui-g-12 ui-md-4">
+                            <div class="ui-inputgroup">
+                                <span class="ui-inputgroup-addon"><i class="pi pi-user"></i></span>
+                                <p:inputText value="#{bEmpresa.user.usuario}" placeholder="Username" style="width:40%" />      
+                            </div>
+                        </div>
+                    </div>
+                </h:form>
+            </ui:define>
+        <ui:composition template="./../template/plantilla.xhtml">
+
+            <ui:define name="content">
+                <div id="listaempresa">
+                    <h:form>
+                        <p:dataTable var="empresalis" value="#{listaEmpresa.empresa}">
+                            <p:column headerText="Usuario">
+                                <h:outputText value="#{empresalis.usuario}" />
+                            </p:column>
+
+                            <p:column headerText="Contraseña">
+                                <h:outputText value="#{empresalis.contrasena}" />
+                            </p:column>
+
+                            <p:column headerText="dirección">
+                                <h:outputText value="#{empresalis.direccion}" />
+                            </p:column>
+                            <p:column headerText="Telefono">
+                                <h:outputText value="#{empresalis.telefono}" />
+                            </p:column>
+                            <p:column headerText="Nit">
+                                <h:outputText value="#{empresalis.nit}" />
+                            </p:column>
+                               <p:column headerText="Privilegio">
+                                   <h:outputText value="#{empresalis.privilegio}" />
+                            </p:column>
+                        </p:dataTable>
+                        <p:commandButton value="Regresar" action="#{listaEmpresa.regresar()}" style="width:100%;" />                     
+                    </h:form>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

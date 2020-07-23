@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+    <h:body>
+        <ui:composition template="./../template/PlantillaLogin.xhtml">
+            <ui:define name="content">
+
+                <div id="Formulario">
+                    <h:form>
+                        <p:growl id="growl" showDetail="true" sticky="true"/>
+                        <center>
+                            <p:panelGrid columns="1" layout="grid"  style="width:70%" >
+                                <h1> Formulario de actualización</h1>
+
+                                <div style="padding:auto"> 
+
+                                    <p:outputLabel value="id a actualizar: " style="font-weight:bold;"/>
+                                    <p:inputText value="#{bEmpresa.usuario}" style="width:auto"/>
+                                </div>
+
+                                <div style="padding:auto;">
+                                    <h:column/>
+                                    <p:outputLabel value="contraseña: " style="font-weight:bold;"/>
+                                    <h:column/>
+                                    <p:inputText value="#{bEmpresa.contrasena}" style="width:auto"/>
+                                </div>
+                                <h:column/>
+                                <div style="padding:auto;">
+                                    <p:outputLabel value="Dirreción: " style="font-weight:bold;"/>
+                                    <p:inputText style="width:auto" value="#{bEmpresa.direccion}"/>
+                                </div>
+
+                                <div style="padding:auto;">
+                                    <h:column/>
+                                    <p:outputLabel value="Telefono: " style="font-weight:bold;"/>
+                                    <h:column/>
+                                    <p:inputText value="#{bEmpresa.telefono}" style="width:auto"/>
+                                </div>
+                                <h:column/>
+                                <div style="padding:auto;">
+                                    <p:outputLabel value="nit: " style="font-weight:bold;"/>
+                                    <p:inputText id="nit" style="width:auto" value="#{bEmpresa.nit}"/>
+                                </div> 
+
+                                <div style="padding:auto;">
+                                    <h:column/>
+                                    <p:outputLabel for="@next" value="Privilegio: " style="font-weight:bold;"/>
+                                    <h:column/>
+                                    <br/>
+                                    <p:selectOneMenu id="posiciones" value="#{bEmpresa.privilegio}" effect="fold" editable="true">
+                                        <f:selectItem itemLabel="Seleccione Uno" itemValue="" />
+                                        <f:selectItems value="#{bEmpresa.privilegios}" />
+                                    </p:selectOneMenu>
+
+                                </div>               
+                                <cente>
+                                    <p:panelGrid columns="1" layout="grid"  style="width:auto" >
+                                        <div style="padding:auto;">
+                                            <h:column/>
+                                            <p:commandButton value="Actualizar datos" action="#{bEmpresa.actualizar()}" style="width:80%;" update="growl"/>
+                                            <p:commandButton value="Regresar" action="#{bEmpresa.regresar()}" style="width:100%;"/>
+                                            <p:growl id="messages" showDetail="true"/>                               
+                                        </div>
+                                    </p:panelGrid>
+                                </cente>
+                            </p:panelGrid>
+                        </center>
+                    </h:form>
+                </div>
+            </ui:define>
+
+        </ui:composition>
+    </h:body>
+
+</html>

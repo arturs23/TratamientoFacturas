@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:body>
+        <ui:composition template="./../template/PlantillaLogin.xhtml">
+            <ui:define name="top">
+                <h:form>
+                    <div class="ui-g ui-fluid">
+                        <div class="ui-g-12 ui-md-4">
+                            <div class="ui-inputgroup">
+                                <span class="ui-inputgroup-addon"><i class="pi pi-user"></i></span>
+                                <p:inputText value="#{bEmpresa.user.usuario}" placeholder="Username" style="width:40%" />      
+                            </div>
+                        </div>
+                    </div>
+                </h:form>
+       </ui:define>
+            <ui:define name="content">
+                  <p:growl id="messages" showDetail="true" />
+                <h:form>
+                    <center>
+                    </center>
+                    <div class="menuprin"> 
+                        <center>
+                              <h3>Menu principal</h3>
+                            <div class="columna1">
+                                 <h:form enctype="multipart/form-data" style="width:132%">     
+                                <p:panel>
+                                    <h:outputText value="Seleccione el archivo "/>
+                                    <p:fileUpload value="#{beanFiltro.file}" mode="simple" skinSimple="true" update="growl"/>
+                                    <p:commandButton value="Cargar Data" ajax="false" action="#{beanFiltro.cargaBD}" disabled="false" />                                 
+                                </p:panel>
+                            </h:form>
+                            </div>
+                        </center>
+                        <center>
+                            <div class="columna21">
+                                <h3>Filtros:</h3>
+                                <center>
+                                    <p:panelGrid columns="1" layout="grid"  style="width:70%" >        
+                                        <p:commandButton value="Listas de datos por facturas cargadas" action="#{bEmpresa.filtocli()}" style="width:80%;" />
+                                        <p:commandButton value="Cerra sesión" action="#{bEmpresa.cerrarsesionmenu()}" style="width:50%;" />
+                                           </p:panelGrid>
+                                </center>  
+                            </div>
+                        </center>
+                        <center>
+                            <div class="columna4">
+
+                            </div>  
+                        </center>
+                    </div>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

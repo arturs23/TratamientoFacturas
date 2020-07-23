@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <title>LOGIN</title>
+
+        <ui:composition template="./../template/PlantillaLogin.xhtml">
+
+            <ui:define name="content">
+                <h:form>
+                    <p:growl id="growl" showDetail="true" sticky="true" />  
+                    <center>
+
+                        <div class="login">
+                            <h3>Iniciar Sesión</h3>
+                            <p:panelGrid columns="1" layout="grid"  style="width:70%" >   
+                                <center>
+                                    <h:outputLabel for="txtUsuario" value="Correo:"/>
+                                    <p:inputText id="txtUsuario" value="#{beanLogin.usuario}"/>
+
+                                    <h:outputLabel for="txtClave" value="Contraseña:"/>
+                                    <p:password id="txtClave" value="#{beanLogin.contrasena}"/>
+
+                                    <h:column/>
+                                    <p:commandButton  value="Iniciar Sesión" action="#{beanLogin.iniciarSesion()}" update="growl"/>
+                                </center>
+                            </p:panelGrid>
+                        </div>
+                    </center>
+
+                </h:form>
+            </ui:define>
+
+
+
+        </ui:composition>
+
+    </body>
+</html>

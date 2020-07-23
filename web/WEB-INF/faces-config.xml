@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    <navigation-rule>
+      
+        <from-view-id>/vista/Login.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>irRegistrar</from-outcome>
+            <to-view-id>/vista/paginaRegistrar.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>irFiltro</from-outcome>
+            <to-view-id>/vista/menuPrincipal.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule> 
+    
+    <navigation-rule>
+        <from-view-id>/vista/actualizarEmpresa.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>irDevolver</from-outcome>
+            <to-view-id>/vista/paginaRegistrar.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>irRegistrar</from-outcome>
+            <to-view-id>/vista/paginaRegistrar.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/vista/paginaRegistrar.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>cerrarSesion</from-outcome>
+            <to-view-id>/vista/Login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/vista/listaEmpresa.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>irRegistrar</from-outcome>
+            <to-view-id>/vista/paginaRegistrar.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/vista/menuPrincipal.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>cerrarSesionmenu</from-action>
+            <to-view-id>/vista/Login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+</faces-config>
